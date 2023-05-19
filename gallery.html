@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETSETGO</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome cdn --->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- fonts --->
+        <link rel = "stylesheet" href = "font/fonts.css">
+        <!-- normalize css ---->
+        <link rel = "stylesheet" href = "css/normalize.css">
+        <!-- custom css ---->
+        <link rel = "stylesheet" href = "css/utility.css">
+        <link rel = "stylesheet" href = "css/responsive.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+       <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    </head>
+
+
+    
+    <body>
+<style>
+  :root{
+  --green: #1ec6b6;
+  --light-grey: #f7f7f7;
+  --dark: #0e1010;
+  --trans: all 0.3s ease-in-out;
+  
+}
+.navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgb(254, 254, 254);
+  padding: 10px; /*topic height*/
+  z-index: 999;
+}
+.navbar .container{
+  box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.site-brand{
+  color: red;
+  font-size: 2.4;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  opacity: 0.95;
+}
+.site-brand span{
+  font-weight: 300;
+}
+#navbar-show-btn{
+  background: transparent;
+  color: white;
+  font-size: 2;
+  opacity: 0.9;
+  transition: var(--trans);
+  -o-transition: var(--trans);
+  transition: var(--trans);
+  border: none;
+}
+#navbar-show-btn:hover{
+  opacity: 1;
+}
+
+/* navbar  width space */
+#navbar-collapse{
+  background-color: var(--trans );
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  padding: 20px;
+  line-height: 40px;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  transition: var(--trans);
+  -o-transition: var(--trans);
+  transition: var(--trans);
+}
+.navbar-collapse-rmw{
+  /* js related */
+      transform: translateX(0)!important;
+      -ms-transform: translateX(0)!important;
+          transform: translateX(0)!important;
+}
+#navbar-close-btn{
+  background: none;
+  color: white;
+  width: 55px;
+  height: 35px;
+  border-radius: 0.2;
+  font-size: 2;
+  transition: var(--trans);
+  -o-transition: var(--trans);
+  transition: var(--trans);
+  position: absolute;
+  right: 1;
+  top: 2;
+  border: none;
+}
+#navbar-close-btn:hover{
+  background-color: #fff;
+  color: var(--green);
+}
+.navbar-nav{
+  margin-top: 5;
+}
+.nav-item{
+  margin: 1.6;
+}
+.nav-link{
+  color: black;
+  font-size: 2;
+  -webkit-transition: var(--trans);
+  -o-transition: var(--trans);
+  transition: var(--trans);
+}
+.nav-link:hover{
+  opacity: 0.8;
+}
+
+</style>
+<header>
+        <!-- navbar  -->
+        <nav class = "navbar">
+            <div class = "container flex">
+                <a href = "index.html" class = "site-brand">
+                    GETSETGO</span>
+                </a>
+
+                <button type = "button" id = "navbar-show-btn" class = "flex">
+                    <i class = "fas fa-bars"></i>
+                </button>
+                <div id = "navbar-collapse">
+                    <button type = "button" id = "navbar-close-btn" class = "flex">
+                        <i class = "fas fa-times"></i>
+                    </button>   
+                    <ul class = "navbar-nav">
+                        <li class = "nav-item">
+                            <a href = "index.html" class = "nav-link">Home</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "about.html" class = "nav-link">About</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "gallery.html" class = "nav-link">Gallery</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "blog.html" class = "nav-link">Blog</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "Contact.html" class = "nav-link">Contact</a>
+                        </li>
+        
+                        </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+                    </ul>
+                </div>  
+            </div>
+        </nav>
+        </header>
+        <!-- end of navbar  -->
+
+<style>
+  /* header background text &image  */
+    header{
+      min-height: 10vh;
+      width: 30rem;
+      padding-top: 7;
+      color: white;
+      text-align: center;
+    }
+    
+    </style>
+
+
+<section>
+  <img src="/images/ba.jpg" alt="My Image" width="100" height="500" align="right" border="0" >
+
+</section>
+    
+
+
+
+
+
+
+
+
+        <div class="container">
+            <button class="b1" onClick="myFunction()"></button>
+            <button class="b2" onClick="myFunction2()"></button>
+            <button class="b3" onClick="myFunction3()"></button>
+          </div>
+          
+          <div class="content">
+            <div id="first"><img src="imags/dive1.jpg"/> </div>
+            <div id="second"><img src="imags/"dive1.jpg"/> </div>
+            <div id="third"><img src="imags/dive1.jpg"/> </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <!-- gallery -->
+    <section>
+<section id="gallery">
+    <div class="container">
+        <div class="row">
+            <div align="center">
+                <button class="btn filter-button active" data-filter="all">All</button>
+                <button class="btn filter-button" data-filter="hdpe">Diving</button>
+                <button class="btn filter-button" data-filter="sprinkle">Nature</button>
+                <button class="btn filter-button" data-filter="spray">Trekking</button>
+            </div>
+
+
+            <div class="filter-gal-par" id="dive">
+                <div class="gallery-item fliter Diving">
+                    <img src="images/dive1.jpg" class="img-responsive">
+                </div>
+
+                <div class="gallery-item fliter Nature" id="dive">
+                    <img src="images/dive2.jpg" class="img-responsive">
+                </div>
+        
+                <div class="gallery-item fliter Trekking">
+                    <img src="images/dive3.jpg" class="img-responsive">
+                </div>
+
+                <div class="gallery_product -item fliter Diving">
+                    <img src="images/dive4.jpg" class="img-responsive">
+                </div>
+
+                <div class="gallery-item fliter Nature" id="Nature">
+                    <img src="images/fiji-surprise/nature2.jpg" class="img-responsive">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                    <img src="images/fiji-surprise/health2.jpg" class="img-responsive">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                    <img src="images/fiji-surprise/nature3.jpg" class="img-responsive">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                    <img src="images/fiji-surprise/diving3.jpg" class="img-responsive">
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                    <img src="images/fiji-surprise/health2.jpg" class="img-responsive">
+                </div>
+                </div>
+            </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+   <!-- footer section -->
+              
+   <footer class = "py-4">
+    <div class = "container footer-row">
+        <div class = "footer-item">
+            <a href = "index.html" class = "site-brand">
+               <h1> GETSETGO</span></h1>
+        
+            </a>
+            <p class = "text"> hi!!!</p>
+        </div>
+
+        <div class = "footer-item">
+            <h2>Follow us on: </h2>
+            <ul class = "social-links">
+                <li>
+                    <a href = "#">
+                        <i class = "fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href = "#">
+                        <i class = "fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href = "#">
+                        <i class = "fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href = "#">
+                        <i class = "fab fa-pinterest"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href = "#">
+                        <i class = "fab fa-google-plus"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class = "footer-item">
+            <h2>Popular Places:</h2>
+            <ul>
+                <li><a href = "#">India</a></li>
+                <li><a href = "#">Australia</a></li>
+                <li><a href = "#">Maldives</a></li>
+                <li><a href = "#">Switzerland</a></li>
+                <li><a href = "#">Germany</a></li>
+            </ul>
+        </div>
+
+        <div class = "subscribe-form footer-item">
+            <h2>Subscribe for Newsletter!</h2>
+            <form class = "flex">
+                <input type = "email" placeholder="Enter Email" class = "form-control">
+                <input type = "submit" class = "btn" value = "Subscribe">
+            </form>
+        </div>
+    </div>
+</footer>
+
+
+                          
+
+<!-- javascript -->
+<script src="js/script.js.js"></script>
+
+
+
+</script>
+</body>
+</html

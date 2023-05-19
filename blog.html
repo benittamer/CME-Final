@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETSETGO</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome cdn --->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- fonts --->
+        <link rel = "stylesheet" href = "font/fonts.css">
+        <!-- normalize css ---->
+        <link rel = "stylesheet" href = "css/normalize.css">
+        <!-- custom css ---->
+        <link rel = "stylesheet" href = "css/utility.css">
+        <link rel = "stylesheet" href = "css/responsive.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+       <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </head>
+
+
+    
+    <body>
+
+      <style>
+    
+        :root {
+        
+        /**
+         * colors
+         */
+        
+        --united-nations-blue: hsl(214, 56%, 58%);
+        --bright-navy-blue: hsl(214, 57%, 51%);
+        --spanish-gray: hsl(0, 0%, 60%);
+        --black-coral: hsl(225, 8%, 42%);
+        --oxford-blue: hsl(208, 97%, 12%);
+        --yale-blue: hsl(214, 72%, 33%);
+        --blue-ncs: hsl(197, 100%, 36%);
+        --gunmetal: hsl(206, 34%, 20%);
+        --gainsboro: hsl(0, 0%, 88%);
+        --cultured: hsl(0, 0%, 98%);
+        --white: hsl(0, 0%, 100%);
+        --black: hsl(0, 0%, 0%);
+        --onyx: hsl(0, 0%, 25%);
+        --jet: hsl(0, 0%, 20%);
+        
+        /**
+         * typography
+         */
+        
+        --ff-poppins: "Poppins", sans-serif;
+        --ff-montserrat: "Montserrat", sans-serif;
+        
+        --fs-1: calc(20px + 3.5vw);
+        --fs-2: calc(18px + 1.6vw);
+        --fs-3: calc(16px + 0.45vw);
+        --fs-4: 15px;
+        --fs-5: 14px;
+        --fs-6: 13px;
+        --fs-7: 12px;
+        --fs-8: 11px;
+        
+        --fw-500: 500;
+        --fw-600: 600;
+        --fw-700: 700;
+        --fw-800: 800;
+        
+        /**
+         * transition
+         */
+        
+        --transition: 0.25s ease-in-out;
+        
+        /**
+         * spacing
+         */
+        
+        --section-padding: 60rem;
+        
+        /**
+         * border-radius
+         */
+        
+        --radius-15: 15px;
+        --radius-25: 25px;
+        
+        }
+        
+        
+        
+        
+        
+        /*-----------------------------------*\
+        * #RESET
+        \*-----------------------------------*/
+        
+        *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        
+        li { list-style: none; }
+        
+        a { text-decoration: none; }
+        
+        a,
+        img,
+        span,
+        input,
+        label,
+        button,
+        ion-icon { display: block; }
+        
+        input,
+        button {
+        background: none;
+        border: none;
+        font: inherit;
+        }
+        
+        button
+         { cursor: pointer; }
+        
+        input
+         { width: 100%; }
+        
+        ion-icon { pointer-events: none; }
+        
+        html {
+        font-family: var(--ff-poppins);
+        scroll-behavior: smooth;
+        }
+        
+        body { background: var(--white); }
+        
+        
+        
+        /*-----------------------------------*\
+        * #REUSED STYLE
+        \*-----------------------------------*/
+        
+        .container 
+        {
+             padding-inline: 15px;
+         }
+        
+        .btn-primary {
+        background: var(--bright-navy-blue);
+        border-color: var(--bright-navy-blue);
+        }
+        
+        .btn-primary:is(:hover, :focus) {
+        background: var(--yale-blue);
+        border-color: var(--yale-blue);
+        }
+        
+        .btn-secondary { border-color: black; }
+        
+        .btn-secondary:is(:hover, :focus)
+         { background: hsla(0, 0%, 100%, 0.1); }
+        
+        .h1,
+        .h2,
+        .h3 {
+        font-weight: var(--fw-800);
+        font-family: var(--ff-montserrat);
+        text-transform: uppercase;
+        }
+        
+        .h1 {
+        color: white;
+        font-size: var(--fs-1);
+        }
+        
+        .h2,
+        .h3 { color: var(--gunmetal); }
+        
+        .h2 { font-size: var(--fs-2); }
+        
+        .h3 {
+        font-size: var(--fs-3);
+        font-weight: var(--fw-700);
+        }
+        
+        .section-subtitle {
+        color: var(--bright-navy-blue);
+        font-size: var(--fs-5);
+        text-transform: uppercase;
+        font-family: var(--ff-montserrat);
+        margin-bottom: 8px;
+        }
+        
+        .section-title { margin-bottom: 15px; }
+        
+        .section-text {
+        color: var(--black-coral);
+        margin-bottom: 30px;
+        }
+        
+        .card-text {
+        color: var(--black-coral);
+        font-size: var(--fs-5);
+        }
+        
+        
+        .header {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding-top: 61px;
+          z-index: 4;
+        }
+        
+        .header-top {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: var(--transition);
+          border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+          padding-block: 110px;
+          z-index: 1;
+        }
+        
+        .header.active .header-top {
+          position: fixed;
+          background:white;
+        }
+        
+        .header-top .container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: flex-start;
+          align-items: center;
+        }
+        
+        .helpline-box .wrapper
+         { display: none; }
+        
+        .helpline-box .icon-box {
+          background: var(--bright-navy-blue);
+          padding: 6rem;
+          border-radius: 50%;
+          color: var(--white);
+        }
+        
+        .helpline-box .icon-box ion-icon
+         { --ionicon-stroke-width: 40px; }
+        
+        .header-top .logo
+         { margin-inline: auto; }
+        
+        .header-top .logo img 
+        { max-width: 100px; }
+        
+        .header-btn-group {
+          justify-self: flex-end;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: black;
+        }
+        
+        .search-btn,
+        .nav-open-btn {
+          font-size: 30px;
+          color: inherit;
+        }
+        
+        .search-btn { font-size: 20px; }
+        
+        .header-bottom { border-bottom: 1px solid hsla(0, 0%, 100%, 0.1); }
+        
+        .header-bottom .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-block: 15px;
+        }
+        
+        .social-list {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        
+        .header .btn
+         { 
+            --padding: 4px 20px;
+         }
+        
+        .header .navbar {
+          position: fixed;
+          top: 0;
+          right: -300px;
+          width: 100%;
+          max-width: 300px;
+          height: 100%;
+          background: black;
+          visibility: hidden;
+          pointer-events: none;
+          transition: 0.15s ease-in;
+          z-index: 3;
+        }
+        
+        .navbar.active {
+          right: 0;
+          visibility: visible;
+          pointer-events: all;
+          transition: 0.25s ease-out;
+        }
+        
+        .navbar-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 40px 15px;
+        }
+        
+        .navbar-top .logo img
+         { width: 15rem; }
+        
+        .nav-close-btn {
+          font-size: 20px;
+          color: var(--bright-navy-blue);
+        }
+        
+        .nav-close-btn ion-icon 
+        { --ionicon-stroke-width: 80px; }
+        
+        .navbar-list 
+        {
+             border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+             }
+        
+        .navbar-list li 
+        {
+             border-bottom: 1px solid hsla(0, 0%, 0%, 0.1); }
+        
+        .navbar-link {
+          padding: 15px 20px;
+          color: hsla(0, 0%, 0%, 0.1);
+          font-weight: var(--fw-500);
+          font-size: var(--fs-4);
+          transition: var(--transition);
+          text-transform: capitalize;
+        }
+        
+        .navbar-link:is(:hover, :focus) { color: var(--bright-navy-blue); }
+        
+        .overlay {
+          position: fixed;
+          inset: 0;
+          background: var(--black);
+          opacity: 0;
+          pointer-events: none;
+          z-index: 2;
+          transition: var(--transition);
+        }
+        
+        .overlay.active {
+          opacity: 0.7;
+          pointer-events: all;
+        }
+        
+        
+        .hero {
+          background-image: url("/images/iban.jpg");
+          background-repeat: no-repeat;
+          background-size: 100rem;
+          background-position: center;
+          background-color:  hsla(0, 0%, 0%, 0.7);
+          background-blend-mode: overlay;
+          display: grid;
+          place-items: center;
+          height: 10rem;
+          text-align: center;
+          padding-top: 125rem;
+        }
+        
+        .hero-title
+         { margin-bottom: 20px; }
+        
+        .hero-text {
+          color: white;
+          font-size: var(--fs-5);
+          margin-bottom: 40px;
+        }
+        
+        .btn-group {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+        }
+        
+        
+        .tour-search {
+          background: var(--bright-navy-blue);
+          padding-block: var(--section-padding);
+        }
+        
+        .tour-search-form .input-label {
+          color: var(--white);
+          font-size: var(--fs-4);
+          margin-left: 20px;
+          margin-bottom: 10px;
+        }
+        
+        .tour-search-form .input-field {
+          background: var(--white);
+          padding: 10px 15px;
+          font-size: var(--fs-5);
+          border-radius: 50px;
+        }
+        
+        .tour-search-form .input-field::placeholder { color: var(--spanish-gray); }
+        
+        .tour-search-form .input-field::-webkit-datetime-edit {
+          color: var(--spanish-gray);
+          text-transform: uppercase;
+        }
+        
+        .tour-search-form .input-wrapper { margin-bottom: 15px; }
+        
+        .tour-search .btn {
+          width: 100%;
+          --border-width: 1px;
+          font-weight: var(--fw-600);
+          margin-top: 35px;
+        }
+        
+        
+        .go-top {
+          position: fixed;
+          bottom: 15rem;
+          right: 15px;
+          width: 35px;
+          height: 35px;
+          background: var(--bright-navy-blue);
+          color: var(--white);
+          display: grid;
+          place-items: center;
+          font-size: 18px;
+          border-radius: 6px;
+          box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+          opacity: 0;
+          transform: translateY(10px);
+          visibility: hidden;
+          transition: var(--transition);
+        }
+        
+        .go-top.active {
+          opacity: 0.8;
+          transform: translateY(0);
+          visibility: visible;
+        }
+        
+        .go-top:is(:hover, :focus) { opacity: 1; }
+        
+        
+        @media (min-width: 580px) 
+        {}
+        
+        .container {
+          max-width: 580px;
+          margin-inline: auto;
+        }
+        
+        .btn {
+          --fs-5: 16px;
+          --padding: 12px 30px;
+        }
+        
+        section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
+          text-align: center;
+        }
+        
+        .section-text { margin-bottom: 40px; }
+        
+        .card-text { --fs-5: 15px; }
+        
+        
+        
+        /**
+         * HEADER
+         */
+        
+        .header { padding-top: 83px; }
+        
+        .helpline-box .icon-box { padding: 14px; }
+        
+        .header-top .logo img { max-width: unset; }
+        
+        .search-btn { font-size: 30px; }
+        
+        .nav-open-btn { font-size: 40px; }
+        
+        .header .btn {
+          --fs-5: 14px;
+          --padding: 6px 20px;
+        }
+        
+        .hero {
+            min-height: 800px;
+            padding-top: 85px;
+          }
+        
+          .hero-text { --fs-5: 15px; }
+        
+          .btn-group { gap: 20px; }
+        
+        
+          .tour-search-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: flex-end;
+            gap: 15px;
+          }
+        
+          .tour-search-form .input-wrapper { margin-bottom: 0; }
+        
+          .tour-search-form .input-field { padding: 16px 20px; }
+        
+          .tour-search .btn {
+            grid-column: span 2;
+            margin-top: 20px;
+          }
+        
+          
+        @media (min-width: 768px) {}
+        
+        /**
+         * CUSTOM PROPERTY
+         */
+        
+        :root {
+        
+          /**
+           * typography
+           */
+        
+          --fs-5: 15px;
+        
+        }
+        
+        .container { max-width: 800px; }
+        
+        .section-text {
+          max-width: 60ch;
+          margin-inline: auto;
+        }
+        
+        .helpline-box {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+          }
+        
+          .helpline-box .wrapper {
+            display: block;
+            color: var(--white);
+            font-size: var(--fs-6);
+          }
+        
+          .social-list { gap: 10px; }
+        
+        
+          @media (min-width: 992px) {}
+        
+        /**
+         * REUSED STYLE
+         */
+        
+        .container { max-width: 1050px; }
+        
+        
+        .header.active .header-top {
+            position: unset;
+            background: unset;
+          }
+        
+          .nav-open-btn,
+          .navbar-top { display: none; }
+        
+          .header-bottom { border-bottom: none; }
+        
+          .header.active .header-bottom {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            color: var(--onyx);
+            box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.08);
+            transition: var(--transition);
+          }
+        
+          .header-bottom .container
+           {
+             padding-block: 0; 
+            }
+        
+          .header .navbar
+           { 
+            
+            all: unset;
+         }
+        
+          .navbar-list {
+            border-top: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        
+          .navbar-list li 
+          {
+             border-bottom: none; 
+            }
+        
+          .navbar-link {
+            color: white;
+            --fs-4: 16px;
+            font-weight: unset;
+            text-transform: uppercase;
+            padding: 20px 15px;
+            
+          }
+        
+          .header.active .navbar-link { color: var(--onyx); }
+        
+          .header.active .navbar-link:is(:hover, :focus) { color: var(--bright-navy-blue); }
+        
+          .header.active .social-link {
+            color: var(--onyx);
+            border-color: hsla(0, 0%, 0%, 0.15);
+          }
+        
+          .overlay { display: none; }
+        
+          .hero .container { max-width: 740px; }
+        
+          .tour-search-form { grid-template-columns: repeat(5, 1fr); }
+        
+          .tour-search .btn {
+            --padding: 15px;
+            grid-column: unset;
+            margin-top: 0;
+          }
+        
+          @media (min-width: 1200px) {
+        
+        /**
+         * CUSTOM PROPERTY
+         */
+        
+        :root {
+        
+          /**
+           * spacing
+           */
+        
+          --section-padding: 100px;
+        
+        }
+        
+        
+        
+        /**
+         * REUSED STYLE
+         */
+        
+        .container { max-width: 1180px; }
+        
+        }
+        
+            </style>
+        
+        
+          <header class="header" data-header>
+        
+        
+                <ul class="navbar-list">
+        
+                    <li>
+                      <a href="index.html" class="navbar-link" data-nav-link>home</a>
+                    </li>
+        
+                    <li>
+                      <a href="about.html" class="navbar-link" data-nav-link>about </a>
+                    </li>
+        
+                   
+        
+                    <li>
+                      <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+        
+                    <li>
+                      <a href="contact.html" class="navbar-link" data-nav-link>contact us</a>
+                    </li>
+        
+                  </ul>
+        
+                </nav>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+              </div>
+            </div>
+        
+          </header>
+        
+        
+          <main>
+            <article>
+         <!-- 
+                - #HERO
+              -->
+        
+              <section class="hero" id="home">
+                <div class="container">
+        
+                  <h2 class="h1 hero-title">Journey to explore world</h2>
+        
+                  <p class="hero-text">
+                    Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos
+                    voluptatibus habitant?
+                    Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.
+                  </p>
+                </section>
+        <!-- end of navbar  -->
+
+  
+
+<style>
+  
+.gallery { padding-block: var(--section-padding); }
+
+.gallery-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-15);
+  overflow: hidden;
+}
+
+.gallery-item:nth-child(3) { grid-area: 1 / 2 / 3 / 3; }
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery { padding-bottom: calc(var(--section-padding * 2)); }
+
+.gallery-list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-image { border-radius: var(--radius-25); }
+
+.section-subtitle{
+  font-weight: bolder;
+  color: black ;
+  font-size: x-large;
+}
+</style>
+
+
+
+
+<section>
+  
+
+
+      <!-- 
+        - #GALLERY
+      -->
+
+      <section class="gallery" id="gallery">
+        <div class="container">
+
+          <p class="section-subtitle">Photo Gallery</p>
+
+          <h2 class="h2 section-title">Photo's From Travellers</h2>
+
+          <p class="section-text">
+            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
+            Sit ornare
+            mollitia tenetur, aptent.
+          </p>
+
+          <ul class="gallery-list">
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/images/ga1.jpg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/images/ga2.jpg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/images/ga3.jpg"  alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/images/ga4.jpg"  alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/images/ga5.jpg"  alt="Gallery image">
+              </figure>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+      
+<style>
+  
+
+
+
+
+  .section-title
+   { font-family: var(--ff-abril-fatface); }
+  
+  .img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-banner { background: var(--silver-chalice); }
+  
+  :is(.popular, .blog) 
+  .section-subtitle {
+    text-align: center;
+    margin-bottom: 100px;
+    color: orange;
+    margin-top: 5rem;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  :is(.popular, .blog) 
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    color: rgb(0, 153, 153);
+  }
+  
+  .popular-list,
+  .blog-list {
+    display: grid;
+    gap: 30px;
+  }
+  
+  .popular-card,
+  .blog-card {
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.1);
+    border-radius: var(--radius-6);
+    overflow: hidden;
+  }
+  
+  :is(.popular, .blog) .card-banner { position: relative; }
+  
+  .card-badge {
+    position: absolute;
+    top: 0rem;
+    left: 10px;
+    background: orange;
+    color: var(--white-1);
+    padding: 14px 10px;
+    border-radius: var(--radius-6);
+  }
+  
+  .card-badge ion-icon {
+    --ionicon-stroke-width: 60px;
+    font-size: 20px;
+    margin-inline: auto;
+  }
+  
+  .card-badge time { font-weight: var(--fw-700); }
+  
+  :is(.popular, .blog) .card-content { padding: 30px 15px; }
+  
+  .card-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  :is(.popular, .blog) .card-title {
+    color: var(--granite-gray);
+    font-size: var(--fs-5);
+    margin-block: 20px;
+  }
+  
+  :is(.popular, .blog) .card-title > a { color: inherit; }
+  
+  :is(.popular, .blog) .card-title > a:is(:hover, :focus) { color: var(--viridian-green); }
+  
+  
+  .blog { padding-bottom: 100px; }
+  
+  .blog-card .author-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .blog-card .card-wrapper {
+    color: var(--spanish-gray);
+    font-size: var(--fs-8);
+    justify-content: space-between;
+  }
+  
+  .author-name {
+    color: var(--granite-gray);
+    font-weight: var(--fw-500);
+  }
+  
+  .btn-link {
+    color: rgb(0, 153, 153);
+    font-weight: var(--fw-700);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .btn-link ion-icon { font-size: 20px; }
+  
+  .btn-link:is(:hover, :focus) { color: var(--oxford-blue); }
+  
+  .container {
+      max-width: 750px;
+      margin-inline: auto;
+    }
+  
+    .popular-list,
+    .blog-list { grid-template-columns: 1fr 1fr; }
+  
+  
+    .container { max-width: 980px; }
+  
+    .popular-list,
+    .blog-list { grid-template-columns: repeat(3, 1fr); }
+  
+    .container { max-width: 1150px; }
+  
+  :is(.popular, .blog) .card-content { padding: 30px; }
+  
+  
+    </style>
+  
+  
+  
+  <section>
+    <!-- 
+          - #BLOG
+        -->
+  
+        <section class="section blog">
+          <div class="container">
+  
+            <p class="section-subtitle">From The Blog Post</p>
+  
+            <h2 class="h2 section-title">Latest News & Articles</h2>
+  
+            <ul class="blog-list">
+  
+              <li>
+                <div class="blog-card">
+  
+                  <figure class="card-banner">
+  
+                    <a href="#">
+                      <img src="images/blog-2.jpg" width="740" height="518" loading="lazy"
+                        alt="A good traveler has no fixed plans and is not intent on arriving." class="img-cover">
+                    </a>
+  
+                    <span class="card-badge">
+                      <ion-icon name="time-outline"></ion-icon>
+  
+                      <time datetime="12-04">04 Dec</time>
+                    </span>
+  
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <div class="card-wrapper">
+  
+                      <div class="author-wrapper">
+                        <figure class="author-avatar">
+                          <img src="images/author-avatar.png" width="30" height="30" alt="Jony bristow">
+                        </figure>
+  
+                        <div>
+                          <a href="#" class="author-name">Jony bristow</a>
+  
+                          <p class="author-title">Admin</p>
+                        </div>
+                      </div>
+  
+                      <time class="publish-time" datetime="10:30">10:30 AM</time>
+  
+                    </div>
+  
+                    <h3 class="card-title">
+                      <a href="#">
+                        A good traveler has no fixed plans and is not intent on arriving.
+                      </a>
+                    </h3>
+  
+                    <a href="#" class="btn-link">
+                      <span>Read More</span>
+  
+                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+  
+                  </div>
+  
+                </div>
+              </li>
+  
+              <li>
+                <div class="blog-card">
+  
+                  <figure class="card-banner">
+  
+                    <a href="#">
+                      <img src="images/blog-3.jpg" width="740" height="518" loading="lazy"
+                        alt="A good traveler has no fixed plans and is not intent on arriving." class="img-cover">
+                    </a>
+  
+                    <span class="card-badge">
+                      <ion-icon name="time-outline"></ion-icon>
+  
+                      <time datetime="12-04">04 Dec</time>
+                    </span>
+  
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <div class="card-wrapper">
+  
+                      <div class="author-wrapper">
+                        <figure class="author-avatar">
+                          <img src="/images/author-avatar.png" width="30" height="30" alt="Jony bristow">
+                        </figure>
+  
+                        <div>
+                          <a href="#" class="author-name">Jony bristow</a>
+  
+                          <p class="author-title">Admin</p>
+                        </div>
+                      </div>
+  
+                      <time class="publish-time" datetime="10:30">10:30 AM</time>
+  
+                    </div>
+  
+                    <h3 class="card-title">
+                      <a href="#">
+                        A good traveler has no fixed plans and is not intent on arriving.
+                      </a>
+                    </h3>
+  
+                    <a href="#" class="btn-link">
+                      <span>Read More</span>
+  
+                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+  
+                  </div>
+  
+                </div>
+              </li>
+  
+              <li>
+                <div class="blog-card">
+  
+                  <figure class="card-banner">
+  
+                    <a href="#">
+                      <img src="images/blog-2.jpg" width="740" height="518" loading="lazy"
+                        alt="A good traveler has no fixed plans and is not intent on arriving." class="img-cover">
+                    </a>
+  
+                    <span class="card-badge">
+                      <ion-icon name="time-outline"></ion-icon>
+  
+                      <time datetime="12-04">04 Dec</time>
+                    </span>
+  
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <div class="card-wrapper">
+  
+                      <div class="author-wrapper">
+                        <figure class="author-avatar">
+                          <img src="images/author-avatar.png" width="30" height="30" alt="Jony bristow">
+                        </figure>
+  
+                        <div>
+                          <a href="#" class="author-name">Jony bristow</a>
+  
+                          <p class="author-title">Admin</p>
+                        </div>
+                      </div>
+  
+                      <time class="publish-time" datetime="10:30">10:30 AM</time>
+  
+                    </div>
+  
+                    <h3 class="card-title">
+                      <a href="#">
+                        A good traveler has no fixed plans and is not intent on arriving.
+                      </a>
+                    </h3>
+  
+                    <a href="#" class="btn-link">
+                      <span>Read More</span>
+  
+                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+  
+                  </div>
+  
+                </div>
+              </li>
+  
+            </ul>
+  
+          </div>
+        </section>
+  
+      </article>
+    </main>
+
+
+
+
+  <section>
+
+
+
+
+
+      <style>
+        footer{
+            background-color:rgb(0, 153, 153);
+            color: #fff;
+            text-align: center;
+            position: relative;
+            margin-top: 100px;
+        }
+        footer::before{
+            content: "";
+            position: absolute;
+            background-color: var(--white);
+            top: 10rem;
+            left: 0;
+            width: 100%;
+        }
+        footer .site-brand{
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 20rem;
+        }
+        .footer-item{
+            margin: 1.3rem;
+        }
+        .footer-item a{
+            font-size: 1rem;
+            color: #fff;
+            
+        }
+        .footer-item a:hover{
+            color: var(--green);
+        }
+        .footer-item ul{
+            padding: 10px;
+        }
+        .footer-item h2{
+            margin-bottom: 1rem;
+        }
+        .social-links{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+        }
+        .social-links li{
+            margin: 0.5rem;
+        }
+        .footer-item:nth-child(3) li{
+            margin: 1.2rem;/*popular places space*/
+        }
+        .footer-item:nth-child(3) a{
+            display: inline-block;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .subscribe-form form{
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+        }
+        .subscribe-form form input{
+            width: 100%;
+            max-width: 300px;
+        }
+        .subscribe-form .form-control{
+            border-color: rgba(255, 255, 255, 0.3);
+            -webkit-transition: var(--trans);
+            -o-transition: var(--trans);
+            transition: var(--trans);
+        }
+        .subscribe-form .form-control:focus{
+            border-color: #fff;
+        }
+        .subscribe-form form input[type = "email"]::-webkit-input-placeholder{
+            color: #fff;
+            opacity: 0.3;
+        }
+        .subscribe-form form input[type = "email"]::-moz-placeholder{
+            color: #fff;
+            opacity: 0.3;
+        }
+        .subscribe-form form input[type = "email"]:-ms-input-placeholder{
+            color: #fff;
+            opacity: 0.3;
+        }
+        .subscribe-form form input[type = "email"]::-ms-input-placeholder{
+            color: #fff;
+            opacity: 0.3;
+        }
+        .subscribe-form form input[type = "email"]::placeholder{
+            color: #fff;
+            opacity: 0.3;
+        }
+        </style>
+        <section>
+                     <!-- footer section -->
+                      
+                     <footer class = "py-4">
+                      <div class = "container footer-row">
+                          <div class = "footer-item">
+                              <a href = "index.html" class = "site-brand">
+                                 <h1> GETSETGO</span></h1>
+                          
+                              </a>
+                              <p class = "text"> hi!!!</p>
+                          </div>
+        
+                          <div class = "footer-item">
+                              <h2>Follow us on: </h2>
+                              <ul class = "social-links">
+                                  <li>
+                                      <a href = "#">
+                                          <i class = "fab fa-facebook-f"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href = "#">
+                                          <i class = "fab fa-instagram"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href = "#">
+                                          <i class = "fab fa-twitter"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href = "#">
+                                          <i class = "fab fa-pinterest"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href = "#">
+                                          <i class = "fab fa-google-plus"></i>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+        
+                          <div class = "footer-item">
+                              <h2>Popular Places:</h2>
+                              <ul>
+                                  <li><a href = "#">India</a></li>
+                                  <li><a href = "#">Australia</a></li>
+                                  <li><a href = "#">Maldives</a></li>
+                                  <li><a href = "#">Switzerland</a></li>
+                                  <li><a href = "#">Germany</a></li>
+                              </ul>
+                          </div>
+        
+                          <div class = "subscribe-form footer-item">
+                              <h2>Subscribe for Newsletter!</h2>
+                              <form class = "flex">
+                                  <input type = "email" placeholder="Enter Email" class = "form-control">
+                                  <input type = "submit" class = "btn" value = "Subscribe">
+                              </form>
+                          </div>
+                      </div>
+                  </footer>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          
+
+
+</body>
+</html>
